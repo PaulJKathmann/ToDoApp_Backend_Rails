@@ -9,3 +9,7 @@
 Task.create(name: "Water my plants", completed: false)
 Task.create(name: "Learn Coding", completed: false)
 Task.create(name: "Go to the Gym", completed: true)
+
+Subtask.create(name: "Water the plants in the living room", completed: false, task_id: 1)
+Subtask.create(name: "Water the plants in the kitchen", completed: false, task_id: 1)
+Subtask.create(name: "Learn Rails", completed: false, task_id: 2)
