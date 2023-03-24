@@ -8,7 +8,6 @@ class TaskRepresenter
       id: task.id,
       name: task.name,
       completed: task.completed
-      subtasks: task.subtasks.map { |subtask| SubtaskRepresenter.new(subtask).as_json }
     }
   end
 
