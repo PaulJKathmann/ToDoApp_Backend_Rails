@@ -7,7 +7,8 @@ class SubtaskRepresenter
       {
         id: subtask.id,
         name: subtask.name,
-        completed: subtask.completed
+        completed: subtask.completed,
+        task_id: subtask.task_id
       }
     end
 
