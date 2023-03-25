@@ -26,7 +26,7 @@ module Api
       def update
         task = Task.find(params[:id])
         task.update(task_params)
-        render json: task
+        render json: TaskRepresenter.new(task).as_json
       end
 
       def destroy
