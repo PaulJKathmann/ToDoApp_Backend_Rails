@@ -1,7 +1,7 @@
 module Api
   module V1
     class SubtasksController < ApplicationController
-      before_action :set_task
+      before_action :authenticate_user!, :set_task
       before_action :set_subtask, only: [:show, :update, :destroy]
 
       def index

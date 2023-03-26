@@ -3,8 +3,10 @@ require 'net/http'
 module Api
   module V1
     class TasksController < ApplicationController
+      before_action :authenticate_user!
+      
       def index
-        tasks = Task.order("completed ASC, created_at DESC")
+        tasks = Task.order("completed ASC, created_at ASC")
         render json: TasksRepresenter.new(tasks).as_json
       end
 
