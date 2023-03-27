@@ -6,7 +6,7 @@ module Api
       before_action :authenticate_user!
 
       def index
-        tasks = @current_user.Task.order("completed ASC, created_at ASC")
+        tasks = current_user.Task.order("completed ASC, created_at ASC")
         render json: TasksRepresenter.new(tasks).as_json
       end
 
@@ -16,7 +16,7 @@ module Api
       end
 
       def create
-        task = Task.new(task_params)
+        task = current_user.tasks.new(task_params)
 
         if task.save
           render json: TaskRepresenter.new(task).as_json, status: :created
