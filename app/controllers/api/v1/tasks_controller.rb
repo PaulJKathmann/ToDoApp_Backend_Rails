@@ -6,7 +6,7 @@ module Api
       before_action :authenticate_user!
 
       def index
-        tasks = current_user.Task.order("completed ASC, created_at ASC")
+        tasks = current_user.Task.order("completed ASC, created_at DESC")
         render json: TasksRepresenter.new(tasks).as_json
       end
 
